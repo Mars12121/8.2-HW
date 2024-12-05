@@ -30,11 +30,12 @@
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
 
 ![alt text](https://github.com/Mars12121/8.2-HW/blob/main/img/1.png)
-![alt text](https://github.com/Mars12121/8.2-HW.git/blob/main/img/2.png)
-![alt text](https://github.com/Mars12121/8.2-HW.git/blob/main/img/3.png)
+![alt text](https://github.com/Mars12121/8.2-HW/blob/main/img/2.png)
+![alt text](https://github.com/Mars12121/8.2-HW/blob/main/img/3.png)
 
 
 ```
+
 Started by user admin
 Running as SYSTEM
 Building in workspace /var/lib/jenkins/workspace/hw-8.2
