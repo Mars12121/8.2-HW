@@ -231,6 +231,93 @@ Finished: SUCCESS
 
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
 
+![alt text](https://github.com/Mars12121/8.2-HW/blob/main/img/5.png)
+![alt text](https://github.com/Mars12121/8.2-HW/blob/main/img/6.png)
+
+```
+Started by user admin
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/hw-8.2-Task3
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Git)
+[Pipeline] git
+The recommended git tool is: NONE
+Warning: CredentialId "github_creds" could not be found.
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/hw-8.2-Task3/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/netology-code/sdvps-materials.git # timeout=10
+Fetching upstream changes from https://github.com/netology-code/sdvps-materials.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/netology-code/sdvps-materials.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 223dbc3f489784448004e020f2ef224f17a7b06d (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 223dbc3f489784448004e020f2ef224f17a7b06d # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main 223dbc3f489784448004e020f2ef224f17a7b06d # timeout=10
+Commit message: "Update README.md"
+ > git rev-list --no-walk 223dbc3f489784448004e020f2ef224f17a7b06d # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
++ /usr/local/go/bin/go test .
+ok  	github.com/netology-code/sdvps-materials	(cached)
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ /usr/local/go/bin/go build .
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push)
+[Pipeline] sh
++ curl -u admin:admin http://127.0.0.1:8081/repository/hw-8.2-Task3/ --upload-file sdvps-materials -v
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:8081...
+* Connected to 127.0.0.1 (127.0.0.1) port 8081
+* Server auth using Basic with user 'admin'
+> PUT /repository/hw-8.2-Task3/sdvps-materials HTTP/1.1
+> Host: 127.0.0.1:8081
+> Authorization: Basic YWRtaW46YWRtaW4=
+> User-Agent: curl/8.5.0
+> Accept: */*
+> Content-Length: 2243605
+> Expect: 100-continue
+> 
+< HTTP/1.1 100 Continue
+
+  0 2191k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0} [65536 bytes data]
+* We are completely uploaded and fine
+< HTTP/1.1 201 Created
+< Date: Sun, 08 Dec 2024 20:03:50 GMT
+< Server: Nexus/3.75.1-01 (OSS)
+< X-Content-Type-Options: nosniff
+< Content-Security-Policy: sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation
+< X-XSS-Protection: 1; mode=block
+< Content-Length: 0
+< 
+
+100 2191k    0     0  100 2191k      0  1137k  0:00:01  0:00:01 --:--:-- 1137k
+100 2191k    0     0  100 2191k      0  1137k  0:00:01  0:00:01 --:--:-- 1137k
+* Connection #0 to host 127.0.0.1 left intact
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+```
+
 ---
 ## Дополнительные задания* (со звёздочкой)
 
