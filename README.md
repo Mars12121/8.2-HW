@@ -35,13 +35,12 @@
 
 
 ```
-
 Started by user admin
 Running as SYSTEM
-Building in workspace /var/lib/jenkins/workspace/hw-8.2
+Building in workspace /var/lib/jenkins/workspace/hw-8.2-Task1
 The recommended git tool is: NONE
 No credentials specified
- > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/hw-8.2/.git # timeout=10
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/hw-8.2-Task1/.git # timeout=10
 Fetching changes from the remote Git repository
  > git config remote.origin.url https://github.com/Mars12121/sdvps-materials.git # timeout=10
 Fetching upstream changes from https://github.com/Mars12121/sdvps-materials.git
@@ -54,24 +53,24 @@ Checking out Revision 223dbc3f489784448004e020f2ef224f17a7b06d (refs/remotes/ori
  > git checkout -f 223dbc3f489784448004e020f2ef224f17a7b06d # timeout=10
 Commit message: "Update README.md"
  > git rev-list --no-walk 223dbc3f489784448004e020f2ef224f17a7b06d # timeout=10
-[hw-8.2] $ /bin/sh -xe /tmp/jenkins17125225478595825948.sh
+[hw-8.2-Task1] $ /bin/sh -xe /tmp/jenkins14291039723454559324.sh
 + /usr/local/go/bin/go test .
 ok  	github.com/netology-code/sdvps-materials	(cached)
-+ docker build . -t ubuntu-bionic:8082/hello-world:v10
++ docker build . -t ubuntu-bionic:8082/hello-world:v9
 #0 building with "default" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
 #1 transferring dockerfile: 350B done
-#1 DONE 0.0s
+#1 DONE 0.1s
 
-#2 [internal] load metadata for docker.io/library/golang:1.16
+#2 [internal] load metadata for docker.io/library/alpine:latest
 #2 ...
 
-#3 [internal] load metadata for docker.io/library/alpine:latest
-#3 DONE 0.8s
+#3 [internal] load metadata for docker.io/library/golang:1.16
+#3 DONE 0.5s
 
-#2 [internal] load metadata for docker.io/library/golang:1.16
-#2 DONE 0.9s
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 0.5s
 
 #4 [internal] load .dockerignore
 #4 transferring context: 2B done
@@ -80,23 +79,23 @@ ok  	github.com/netology-code/sdvps-materials	(cached)
 #5 [builder 1/4] FROM docker.io/library/golang:1.16@sha256:5f6a4662de3efc6d6bb812d02e9de3d8698eea16b8eb7281f03e6f3e8383018e
 #5 DONE 0.0s
 
-#6 [stage-1 1/3] FROM docker.io/library/alpine:latest@sha256:1e42bbe2508154c9126d48c2b8a75420c3544343bf86fd041fb7527e017a4b4a
+#6 [stage-1 1/3] FROM docker.io/library/alpine:latest@sha256:21dc6063fd678b478f57c0e13f47560d0ea4eeba26dfc947b2a4f81f686b9f45
 #6 DONE 0.0s
 
 #7 [internal] load build context
 #7 transferring context: 13.24kB done
 #7 DONE 0.0s
 
-#8 [stage-1 2/3] RUN apk -U add ca-certificates
+#8 [builder 4/4] RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .
 #8 CACHED
 
-#9 [builder 2/4] WORKDIR /go/src/github.com/netology-code/sdvps-materials
+#9 [stage-1 2/3] RUN apk -U add ca-certificates
 #9 CACHED
 
-#10 [builder 3/4] COPY . ./
+#10 [builder 2/4] WORKDIR /go/src/github.com/netology-code/sdvps-materials
 #10 CACHED
 
-#11 [builder 4/4] RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .
+#11 [builder 3/4] COPY . ./
 #11 CACHED
 
 #12 [stage-1 3/3] COPY --from=builder /app /app
@@ -104,8 +103,8 @@ ok  	github.com/netology-code/sdvps-materials	(cached)
 
 #13 exporting to image
 #13 exporting layers done
-#13 writing image sha256:821aef8a4a870e5a7b20572ab4e9aef5c560eb47491abedca92c4cc964056cdc done
-#13 naming to ubuntu-bionic:8082/hello-world:v10 done
+#13 writing image sha256:e80be627eef7c61382fc8c2ef22c995750ae78bbe0af9eff59f8529580a3d616 done
+#13 naming to ubuntu-bionic:8082/hello-world:v9 0.0s done
 #13 DONE 0.0s
 Finished: SUCCESS
 ```
